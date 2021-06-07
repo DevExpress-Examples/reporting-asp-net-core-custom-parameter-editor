@@ -1,0 +1,37 @@
+@using CustomParameterEditorAspNetCoreExample.PredefinedReports
+@model DevExpress.XtraReports.UI.XtraReport
+
+<script type="text/html" id="custom-parameter-text-editor">
+    <div data-bind="dxTextBox: getOptions({ value: value, disabled: disabled }),
+         dxValidator: { validationRules: $data.validationRules || [] }"></div>
+</script>
+<script type="text/javascript">
+    function customizeParameterEditors(s, e) {
+        if (e.parameter.type ===
+            "@typeof(CustomParameterType).FullName") {
+            if(!e.parameter.multiValue && !e.parameter.hasLookUpValues) {
+                e.info.validationRules = e.info.validationRules || [];
+                e.info.validationRules.push(
+                    { type: 'email', message: 'Email parameter value has invalid format.' });
+                e.info.editor = { header: "custom-parameter-text-editor" };
+            }
+        }
+    }
+</script>
+
+@{
+    var viewerRender = Html.DevExpress().WebDocumentViewer("DocumentViewer")
+        .Height("1000px")
+        .ClientSideEvents(configure => configure.CustomizeParameterEditors("customizeParameterEditors"))
+        .Bind(Model);
+    @viewerRender.RenderHtml()
+}
+
+@section Scripts {
+    <link href="~/css/dx-reporting-skeleton-screen.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/viewer.part.bundle.css" />
+    <script src="~/js/reporting.thirdparty.bundle.js"></script>
+    <script src="~/js/viewer.part.bundle.js"></script>
+
+    @viewerRender.RenderScripts()
+}

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XtraReportsLayoutSerializer SerializerVersion="21.1.3.0" Ref="0" ControlType="DevExpress.XtraReports.UI.XtraReport, DevExpress.XtraReports.v21.1, Version=21.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Name="XtraReport" Margins="100, 100, 78, 100" PageWidth="850" PageHeight="1100" Version="21.1">
+  <Extensions>
+    <Item1 Ref="1" Key="VSReportExtInfo" Value=".vsrepx" />
+  </Extensions>
+  <Parameters>
+    <Item1 Ref="3" Description="Custom Email Parameter" Name="customMailParameterLookup" />
+    <Item2 Ref="4" Description="Additional Custom Email Parameter" Name="customMailParameterText" />
+    <Item3 Ref="5" Description="Multi-value Email Parameter" MultiValue="true" Name="customMailParameterMultivalue" />
+    <Item4 Ref="6" Description="Predefined multi-value Email parameter" MultiValue="true" Name="customMailParameterMultivalueLookup" />
+  </Parameters>
+  <Bands>
+    <Item1 Ref="7" ControlType="DetailBand" Name="Detail" HeightF="289.7084" KeepTogether="true" TextAlignment="TopLeft" Padding="0,0,0,0,100">
+      <Controls>
+        <Item1 Ref="8" ControlType="XRLabel" Name="xrLabel2" Multiline="true" Text="xrLabel2" SizeF="262.5709,55.29165" LocationFloat="377.4291,47.91667" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="9" EventName="BeforePrint" PropertyName="Text" Expression="[Parameters].[customMailParameterLookup]" />
+          </ExpressionBindings>
+        </Item1>
+        <Item2 Ref="10" ControlType="XRLabel" Name="xrLabel8" Multiline="true" Text="xrLabel2" SizeF="262.5709,62.58339" LocationFloat="377.4291,227.125" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="11" EventName="BeforePrint" PropertyName="Text" Expression="[Parameters].[customMailParameterMultivalueLookup]" />
+          </ExpressionBindings>
+        </Item2>
+        <Item3 Ref="12" ControlType="XRLabel" Name="xrLabel9" Multiline="true" Text="Multiple email addresses (predefined list):" TextAlignment="TopLeft" SizeF="377.4291,62.58336" LocationFloat="0,227.125" StyleName="Title" Padding="2,2,0,0,100">
+          <StylePriority Ref="13" UseTextAlignment="false" />
+        </Item3>
+        <Item4 Ref="14" ControlType="XRLabel" Name="xrLabel6" Multiline="true" Text="xrLabel2" SizeF="262.5709,23" LocationFloat="377.4291,171.9166" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="15" EventName="BeforePrint" PropertyName="Text" Expression="[Parameters].[customMailParameterMultivalue]" />
+          </ExpressionBindings>
+        </Item4>
+        <Item5 Ref="16" ControlType="XRLabel" Name="xrLabel7" Multiline="true" Text="Multiple email addresses:" TextAlignment="TopLeft" SizeF="377.4291,25.55339" LocationFloat="0,169.3633" StyleName="Title" Padding="2,2,0,0,100">
+          <StylePriority Ref="17" UseTextAlignment="false" />
+        </Item5>
+        <Item6 Ref="18" ControlType="XRLabel" Name="xrLabel4" Multiline="true" Text="xrLabel2" SizeF="262.5709,28.20834" LocationFloat="377.4291,115.2083" Padding="2,2,0,0,100">
+          <ExpressionBindings>
+            <Item1 Ref="19" EventName="BeforePrint" PropertyName="Text" Expression="[Parameters].[customMailParameterText]" />
+          </ExpressionBindings>
+        </Item6>
+        <Item7 Ref="20" ControlType="XRLabel" Name="xrLabel5" Multiline="true" Text="Single email address:" TextAlignment="TopLeft" SizeF="377.4291,28.20834" LocationFloat="0,115.2083" StyleName="Title" Padding="2,2,0,0,100">
+          <StylePriority Ref="21" UseTextAlignment="false" />
+        </Item7>
+        <Item8 Ref="22" ControlType="XRLabel" Name="xrLabel3" Multiline="true" Text="Single email address (predefined list):" TextAlignment="TopLeft" SizeF="377.4291,55.29165" LocationFloat="0,47.91667" StyleName="Title" Padding="2,2,0,0,100">
+          <StylePriority Ref="23" UseTextAlignment="false" />
+        </Item8>
+        <Item9 Ref="24" ControlType="XRLabel" Name="xrLabel10" Multiline="true" Text="Send this report to:" SizeF="249.4583,25.55338" LocationFloat="0,0" StyleName="Title" Padding="2,2,0,0,100" />
+      </Controls>
+    </Item1>
+    <Item2 Ref="25" ControlType="TopMarginBand" Name="TopMargin" HeightF="78.20841" TextAlignment="TopLeft" Padding="0,0,0,0,100" />
+    <Item3 Ref="26" ControlType="BottomMarginBand" Name="BottomMargin" TextAlignment="TopLeft" Padding="0,0,0,0,100" />
+  </Bands>
+  <StyleSheet>
+    <Item1 Ref="27" Name="Title" BorderStyle="Inset" Font="Tahoma, 14pt" ForeColor="255,75,75,75" BackColor="Transparent" BorderColor="Black" Sides="None" StringFormat="Near;Near;0;None;Character;Default" BorderWidthSerializable="1" />
+    <Item2 Ref="28" Name="DetailCaption3" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Tahoma, 8pt, style=Bold" ForeColor="255,75,75,75" BackColor="Transparent" BorderColor="Transparent" Sides="None" StringFormat="Near;Center;0;None;Character;Default" TextAlignment="MiddleLeft" />
+    <Item3 Ref="29" Name="DetailData3" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Tahoma, 8pt" ForeColor="Black" StringFormat="Near;Center;0;None;Character;Default" TextAlignment="MiddleLeft" />
+    <Item4 Ref="30" Name="DetailData3_Odd" BorderStyle="Inset" Padding="6,6,0,0,100" Font="Tahoma, 8pt" ForeColor="Black" BackColor="255,231,231,231" BorderColor="Transparent" Sides="None" StringFormat="Near;Center;0;None;Character;Default" TextAlignment="MiddleLeft" BorderWidthSerializable="1" />
+    <Item5 Ref="31" Name="DetailCaptionBackground3" BorderStyle="Inset" BackColor="Transparent" BorderColor="255,206,206,206" Sides="Top" StringFormat="Near;Near;0;None;Character;Default" BorderWidthSerializable="2" />
+    <Item6 Ref="32" Name="PageInfo" BorderStyle="Inset" Padding="2,2,0,0,100" Font="Tahoma, 8pt, style=Bold" ForeColor="255,75,75,75" StringFormat="Near;Near;0;None;Character;Default" />
+  </StyleSheet>
+</XtraReportsLayoutSerializer>
