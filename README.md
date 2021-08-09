@@ -4,6 +4,7 @@ This example demonstrates how to use custom types for report parameters, create 
 
 ![](images/Custom-Parameter-Types-and-Editors.png)
 
+<!-- default file list -->
 ## Files to look at
 
 - [CustomParameterType.cs](CustomParameterEditorAspNetCoreExample/Services/CustomParameterType.cs)
@@ -11,6 +12,7 @@ This example demonstrates how to use custom types for report parameters, create 
 - [TestReport.cs](CustomParameterEditorAspNetCoreExample/PredefinedReports/TestReport.cs)
 - [HomeController.cs](CustomParameterEditorAspNetCoreExample/Controllers/HomeController.cs)
 - [Viewer.cshtml](CustomParameterEditorAspNetCoreExample/Views/Home/Viewer.cshtml)
+<!-- default file list end -->
 
 **See also**:
 
