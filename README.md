@@ -2,16 +2,16 @@
 
 This example demonstrates how to use custom types for report parameters, create custom parameter editors, and implement serialization/deserialization logic. 
 
-![](images/Custom-Parameter-Types-and-Editors.png)
+![](Images/Custom-Parameter-Types-and-Editors.png)
 
 <!-- default file list -->
 ## Files to look at
 
-- [CustomParameterType.cs](CustomParameterEditorAspNetCoreExample/Services/CustomParameterType.cs)
-- [CustomDataSerializer.cs](CustomParameterEditorAspNetCoreExample/Services/CustomDataSerializer.cs)
-- [TestReport.cs](CustomParameterEditorAspNetCoreExample/PredefinedReports/TestReport.cs)
-- [HomeController.cs](CustomParameterEditorAspNetCoreExample/Controllers/HomeController.cs)
-- [Viewer.cshtml](CustomParameterEditorAspNetCoreExample/Views/Home/Viewer.cshtml)
+- [CustomParameterType.cs](CS/CustomParameterEditorAspNetCoreExample/Services/CustomParameterType.cs)
+- [CustomDataSerializer.cs](CS/CustomParameterEditorAspNetCoreExample/Services/CustomDataSerializer.cs)
+- [TestReport.cs](CS/CustomParameterEditorAspNetCoreExample/PredefinedReports/TestReport.cs)
+- [HomeController.cs](CS/CustomParameterEditorAspNetCoreExample/Controllers/HomeController.cs)
+- [Viewer.cshtml](CS/CustomParameterEditorAspNetCoreExample/Views/Home/Viewer.cshtml)
 <!-- default file list end -->
 
 **See also**:
