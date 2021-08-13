@@ -75,15 +75,15 @@ namespace CustomParameterEditorAspNetCoreExample.Services
                                      .Union(ReportsFactory.Reports.Select(x => x.Key))
                                      .ToDictionary<string, string>(x => x);
         }
-
         public override void SetData(XtraReport report, string url) {
             // Stores the specified report to a Report Storage using the specified URL. 
             // This method is called only after the IsValidUrl and CanSetData methods are called.
             if(!IsWithinReportsFolder(url, ReportDirectory))
                 throw new DevExpress.XtraReports.Web.ClientControls.FaultException("Invalid report name.");
+            report.Extensions[DevExpress.XtraReports.Native.SerializationService.Guid] 
+                = CustomDataSerializer.Name;
             report.SaveLayoutToXml(Path.Combine(ReportDirectory, url + FileExtension));
         }
-
         public override string SetNewData(XtraReport report, string defaultUrl) {
             // Stores the specified report using a new URL. 
             // The IsValidUrl and CanSetData methods are never called before this method. 

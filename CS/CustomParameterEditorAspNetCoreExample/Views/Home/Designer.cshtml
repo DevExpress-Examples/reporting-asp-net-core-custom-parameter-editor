@@ -13,12 +13,24 @@
             valueConverter: function(valueObj) { return valueObj; }
         }, editor);
     }
+    function onCustomizeMenuActions(s, e) {
+        var newReportAction = e.GetById(DevExpress.Reporting.Designer.Actions.ActionId.NewReport);
+        if (newReportAction) {
+            newReportAction.clickAction = function () {
+                s.OpenReport("TemplateReport");
+            }
+        }
+    }
 </script>
 
 @{
     var designerRender = Html.DevExpress().ReportDesigner("reportDesigner")
         .Height("1000px")
-        .ClientSideEvents(configure => configure.BeforeRender("reportDesignerInit"))
+        .ClientSideEvents(configure =>
+        {
+            configure.BeforeRender("reportDesignerInit");
+            configure.CustomizeMenuActions("onCustomizeMenuActions");
+        })
         .Bind(Model);
     @designerRender.RenderHtml()
 }

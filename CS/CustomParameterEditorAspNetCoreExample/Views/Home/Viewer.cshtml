@@ -1,6 +1,3 @@
-@using CustomParameterEditorAspNetCoreExample.PredefinedReports
-@model DevExpress.XtraReports.UI.XtraReport
-
 <script type="text/html" id="custom-parameter-text-editor">
     <div data-bind="dxTextBox: getOptions({ value: value, disabled: disabled }),
          dxValidator: { validationRules: $data.validationRules || [] }"></div>
@@ -23,7 +20,7 @@
     var viewerRender = Html.DevExpress().WebDocumentViewer("DocumentViewer")
         .Height("1000px")
         .ClientSideEvents(configure => configure.CustomizeParameterEditors("customizeParameterEditors"))
-        .Bind(Model);
+        .Bind("CustomParameterReport");
     @viewerRender.RenderHtml()
 }
 

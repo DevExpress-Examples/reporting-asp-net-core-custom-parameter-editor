@@ -10,18 +10,15 @@ namespace CustomParameterEditorAspNetCoreExample.Controllers {
             Models.ErrorModel model = new Models.ErrorModel();
             return View(model);
         }
-
         public ActionResult Designer()
         {
-            var report = new PredefinedReports.TestReport();
+            var report = new DevExpress.XtraReports.UI.XtraReport();
             report.Extensions[SerializationService.Guid] = CustomDataSerializer.Name;
             return View(report);
         }
         public ActionResult Viewer()
         {
-            var report = new PredefinedReports.TestReport();
-            report.Extensions[SerializationService.Guid] = CustomDataSerializer.Name;
-            return View(report);
+            return View();
         }
     }
 }

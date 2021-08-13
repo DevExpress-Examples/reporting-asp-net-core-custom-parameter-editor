@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using DevExpress.XtraReports.Native;
 
 namespace CustomParameterEditorAspNetCoreExample
 {
+    [TypeConverter(typeof(CustomParameterTypeConverter))]
     public class CustomDataSerializer : IDataSerializer
     {
         public const string Name = "myCustomDataSerializer";
