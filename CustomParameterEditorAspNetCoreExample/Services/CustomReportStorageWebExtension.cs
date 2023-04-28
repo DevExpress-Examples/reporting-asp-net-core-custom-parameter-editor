@@ -22,12 +22,6 @@ namespace CustomParameterEditorAspNetCoreExample.Services
             }
         }
 
-        private bool IsWithinReportsFolder(string url, string folder) {
-            var rootDirectory = new DirectoryInfo(folder);
-            var fileInfo = new FileInfo(Path.Combine(folder, url));
-            return fileInfo.Directory.FullName.ToLower().StartsWith(rootDirectory.FullName.ToLower());
-        }
-
         public override bool CanSetData(string url) {
             // Determines whether or not it is possible to store a report by a given URL. 
             // For instance, make the CanSetData method return false for reports that should be read-only in your storage. 
@@ -78,11 +72,12 @@ namespace CustomParameterEditorAspNetCoreExample.Services
         public override void SetData(XtraReport report, string url) {
             // Stores the specified report to a Report Storage using the specified URL. 
             // This method is called only after the IsValidUrl and CanSetData methods are called.
-            if(!IsWithinReportsFolder(url, ReportDirectory))
-                throw new DevExpress.XtraReports.Web.ClientControls.FaultException("Invalid report name.");
-            report.Extensions[DevExpress.XtraReports.Native.SerializationService.Guid] 
-                = CustomDataSerializer.Name;
-            report.SaveLayoutToXml(Path.Combine(ReportDirectory, url + FileExtension));
+        var resolvedUrl = Path.GetFullPath(Path.Combine(ReportDirectory, url + FileExtension));
+        if (!resolvedUrl.StartsWith(ReportDirectory + Path.DirectorySeparatorChar)) {
+            throw new DevExpress.XtraReports.Web.ClientControls.FaultException("Invalid report name.");
+        }
+
+        report.SaveLayoutToXml(resolvedUrl);
         }
         public override string SetNewData(XtraReport report, string defaultUrl) {
             // Stores the specified report using a new URL. 
