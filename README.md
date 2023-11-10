@@ -2,7 +2,7 @@
 
 This example demonstrates how to use custom types for report parameters, create custom parameter editors, and implement serialization/deserialization logic. 
 
-![](Images/Custom-Parameter-Types-and-Editors.png)
+![](images/Custom-Parameter-Types-and-Editors.png)
 
 ## Files to Review
 
