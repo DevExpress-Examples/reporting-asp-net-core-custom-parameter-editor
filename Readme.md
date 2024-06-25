@@ -25,6 +25,11 @@ This example demonstrates how to use custom types for report parameters, create 
 - [XML Serialization](https://docs.devexpress.com/XtraReports/10011/detailed-guide-to-devexpress-reporting/store-and-distribute-reports/store-report-layouts-and-documents/xml-serialization)
 - [Reporting — Safe Deserialization](https://docs.devexpress.com/XtraReports/404485/safe-deserialization)
 - [Tasks and Solutions for ASP.NET Core Applications](https://docs.devexpress.com/XtraReports/402406/web-reporting/asp-net-core-reporting/tasks-and-solutions-for-asp-net-core-applications)
+
+  
+## More Examples
+
+- [Reporting for ASP.NET MVC - Custom Report Parameter Types](https://github.com/DevExpress-Examples/reporting-mvc-custom-parameter-editor)
 <!-- feedback -->
 ## Does this example address your development requirements/objectives?
 
@@ -33,6 +38,3 @@ This example demonstrates how to use custom types for report parameters, create 
 (you will be redirected to DevExpress.com to submit your response)
 <!-- feedback end -->
 
-## More Examples
-
-- [Reporting for ASP.NET MVC - Custom Report Parameter Types](https://github.com/DevExpress-Examples/reporting-mvc-custom-parameter-editor)
