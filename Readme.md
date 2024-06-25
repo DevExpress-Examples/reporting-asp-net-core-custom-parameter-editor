@@ -32,3 +32,7 @@ This example demonstrates how to use custom types for report parameters, create 
 
 (you will be redirected to DevExpress.com to submit your response)
 <!-- feedback end -->
+
+## More Examples
+
+- [Reporting for ASP.NET MVC - Custom Report Parameter Types](https://github.com/DevExpress-Examples/reporting-mvc-custom-parameter-editor)
