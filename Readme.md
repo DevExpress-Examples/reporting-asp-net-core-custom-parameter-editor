@@ -13,11 +13,14 @@ This example demonstrates how to use custom types for report parameters, create 
 
 - [CustomParameterType.cs](CustomParameterEditorAspNetCoreExample/Services/CustomParameterType.cs)
 - [CustomDataSerializer.cs](CustomParameterEditorAspNetCoreExample/Services/CustomDataSerializer.cs)
-- [TestReport.cs](CustomParameterEditorAspNetCoreExample/PredefinedReports/TestReport.cs)
+- [CustomReportStorageWebExtension.cs](CustomParameterEditorAspNetCoreExample/Services/CustomReportStorageWebExtension.cs)
 - [HomeController.cs](CustomParameterEditorAspNetCoreExample/Controllers/HomeController.cs)
 - [Viewer.cshtml](CustomParameterEditorAspNetCoreExample/Views/Home/Viewer.cshtml)
+- [Designer.cshtml](CustomParameterEditorAspNetCoreExample/Views/Home/Designer.cshtml)
 
 ## Documentation  
 
 - [Use Report Parameters](https://docs.devexpress.com/XtraReports/4812/detailed-guide-to-devexpress-reporting/shape-report-data/use-report-parameter)
+- [XML Serialization](https://docs.devexpress.com/XtraReports/10011/detailed-guide-to-devexpress-reporting/store-and-distribute-reports/store-report-layouts-and-documents/xml-serialization)
+- [Reporting — Safe Deserialization](https://docs.devexpress.com/XtraReports/404485/safe-deserialization)
 - [Tasks and Solutions for ASP.NET Core Applications](https://docs.devexpress.com/XtraReports/402406/web-reporting/asp-net-core-reporting/tasks-and-solutions-for-asp-net-core-applications)

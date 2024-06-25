@@ -5,12 +5,6 @@
     <DefaultItemExcludes>Reports\**</DefaultItemExcludes>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Remove="Reports\**" />
-    <Content Remove="Reports\**" />
-    <EmbeddedResource Remove="Reports\**" />
-    <None Remove="Reports\**" />
-  </ItemGroup>
-  <ItemGroup>
     <None Remove="Data\nwind.db" />
   </ItemGroup>
   <ItemGroup>
@@ -27,17 +21,6 @@
   <ItemGroup>
     <EmbeddedResource Include="PredefinedReports\*.vsrepx" />
   </ItemGroup>
-  <ItemGroup>
-    <None Remove="PredefinedReports\TestReport.vsrepx" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Update="PredefinedReports\TestReport.cs">
-      <DependentUpon>TestReport.vsrepx</DependentUpon>
-    </Compile>
-    <Compile Update="PredefinedReports\TestReport.Designer.cs">
-      <DependentUpon>TestReport.vsrepx</DependentUpon>
-    </Compile>
-  </ItemGroup>
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="LibraryManagerRestore" Condition="!Exists('node_modules') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">
@@ -49,9 +32,13 @@
   </Target>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.0" />
-    <PackageReference Include="System.Data.SQLite" Version="1.0.113.1" />
-    <PackageReference Include="DevExpress.AspNetCore.Reporting" Version="23.2.*-*" />
+    <PackageReference Include="System.Data.SQLite" Version="1.0.118" />
+    <PackageReference Include="DevExpress.AspNetCore.Reporting" Version="23.2.7" />
     <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
     <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="2.1.175" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Reports\CustomParameterReport.repx" />
+    <None Include="Reports\TemplateReport.repx" />
   </ItemGroup>
 </Project>

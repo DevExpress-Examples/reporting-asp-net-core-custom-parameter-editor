@@ -8,11 +8,10 @@ using DevExpress.XtraReports.Web.Extensions;
 using DevExpress.XtraReports.UI;
 using Microsoft.AspNetCore.Hosting;
 using CustomParameterEditorAspNetCoreExample.PredefinedReports;
+using System.Threading.Tasks;
 
-namespace CustomParameterEditorAspNetCoreExample.Services
-{
-    public class CustomReportStorageWebExtension : DevExpress.XtraReports.Web.Extensions.ReportStorageWebExtension
-    {
+namespace CustomParameterEditorAspNetCoreExample.Services {
+    public class CustomReportStorageWebExtension : DevExpress.XtraReports.Web.Extensions.ReportStorageWebExtension {
         readonly string ReportDirectory;
         const string FileExtension = ".repx";
         public CustomReportStorageWebExtension(IWebHostEnvironment env) {
@@ -20,6 +19,11 @@ namespace CustomParameterEditorAspNetCoreExample.Services
             if (!Directory.Exists(ReportDirectory)) {
                 Directory.CreateDirectory(ReportDirectory);
             }
+        }
+        public override Task AfterGetDataAsync(string url, XtraReport report) {
+            var report2 = report;
+            return base.AfterGetDataAsync(url, report);
+
         }
 
         public override bool CanSetData(string url) {
@@ -42,18 +46,17 @@ namespace CustomParameterEditorAspNetCoreExample.Services
             // Returns report layout data stored in a Report Storage using the specified URL. 
             // This method is called only for valid URLs after the IsValidUrl method is called.
             try {
-                if (Directory.EnumerateFiles(ReportDirectory).Select(Path.GetFileNameWithoutExtension).Contains(url))
-                {
+                if (Directory.EnumerateFiles(ReportDirectory).Select(Path.GetFileNameWithoutExtension).Contains(url)) {
                     return File.ReadAllBytes(Path.Combine(ReportDirectory, url + FileExtension));
                 }
-                if (ReportsFactory.Reports.ContainsKey(url))
-                {
+                if (ReportsFactory.Reports.ContainsKey(url)) {
                     using (MemoryStream ms = new MemoryStream()) {
                         ReportsFactory.Reports[url]().SaveLayoutToXml(ms);
                         return ms.ToArray();
                     }
                 }
-            } catch (Exception ex) {
+            }
+            catch (Exception ex) {
                 throw new DevExpress.XtraReports.Web.ClientControls.FaultException("Could not get report data.", ex);
             }
             throw new DevExpress.XtraReports.Web.ClientControls.FaultException(string.Format("Could not find report '{0}'.", url));
@@ -63,7 +66,7 @@ namespace CustomParameterEditorAspNetCoreExample.Services
             // Returns a dictionary of the existing report URLs and display names. 
             // This method is called when running the Report Designer, 
             // before the Open Report and Save Report dialogs are shown and after a new report is saved to a storage.
-            
+
             return Directory.GetFiles(ReportDirectory, "*" + FileExtension)
                                      .Select(Path.GetFileNameWithoutExtension)
                                      .Union(ReportsFactory.Reports.Select(x => x.Key))
@@ -72,12 +75,12 @@ namespace CustomParameterEditorAspNetCoreExample.Services
         public override void SetData(XtraReport report, string url) {
             // Stores the specified report to a Report Storage using the specified URL. 
             // This method is called only after the IsValidUrl and CanSetData methods are called.
-        var resolvedUrl = Path.GetFullPath(Path.Combine(ReportDirectory, url + FileExtension));
-        if (!resolvedUrl.StartsWith(ReportDirectory + Path.DirectorySeparatorChar)) {
-            throw new DevExpress.XtraReports.Web.ClientControls.FaultException("Invalid report name.");
-        }
+            var resolvedUrl = Path.GetFullPath(Path.Combine(ReportDirectory, url + FileExtension));
+            if (!resolvedUrl.StartsWith(ReportDirectory + Path.DirectorySeparatorChar)) {
+                throw new DevExpress.XtraReports.Web.ClientControls.FaultException("Invalid report name.");
+            }
 
-        report.SaveLayoutToXml(resolvedUrl);
+            report.SaveLayoutToXml(resolvedUrl);
         }
         public override string SetNewData(XtraReport report, string defaultUrl) {
             // Stores the specified report using a new URL. 
