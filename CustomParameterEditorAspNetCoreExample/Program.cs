@@ -4,7 +4,7 @@ using CustomParameterEditorAspNetCoreExample.Services;
 using DevExpress.AspNetCore;
 using DevExpress.AspNetCore.Reporting;
 using DevExpress.Security.Resources;
-using DevExpress.XtraReports.Native;
+using DevExpress.Utils.Serializing;
 using DevExpress.XtraReports.Web.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -50,7 +50,7 @@ app.UseRouting();
 DevExpress.Utils.DeserializationSettings.EnableSafeDeserialization();
 DevExpress.Utils.DeserializationSettings.RegisterTrustedClass(typeof(CustomParameterType));
 DevExpress.Utils.DeserializationSettings.RegisterTrustedClass(typeof(CustomParameterType[]));
-SerializationService.RegisterSerializer(CustomDataSerializer.Name, new CustomDataSerializer());
+ObjectDataSerializer.Register(CustomDataSerializer.Name, new CustomDataSerializer());
 
 app.UseAuthorization();
 app.MapControllerRoute(

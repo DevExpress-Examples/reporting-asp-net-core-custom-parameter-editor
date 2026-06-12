@@ -31,11 +31,11 @@
     <Exec Command="npm install" />
   </Target>
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.0" />
-    <PackageReference Include="System.Data.SQLite" Version="1.0.118" />
-    <PackageReference Include="DevExpress.AspNetCore.Reporting" Version="24.2.1-alpha-24207" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.0" />
+    <PackageReference Include="System.Data.SQLite" Version="2.0.3" />
+    <PackageReference Include="DevExpress.AspNetCore.Reporting" Version="26.1.2-beta" />
     <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
-    <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="2.1.175" />
+    <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="3.0.71" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Reports\CustomParameterReport.repx" />
